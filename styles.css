@@ -60,7 +60,16 @@ body {
     cursor: pointer;
     margin: 0 2px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
 
+.controls__colors .jsCustomColor {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.jsCustomColor input {
+    display: none;
 }
 
 .controls .controls__range {

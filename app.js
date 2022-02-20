@@ -5,6 +5,8 @@ const colors = document.getElementsByClassName('jsColor');
 const mode = document.getElementById('jsMode');
 const saveBtn = document.getElementById('jsSave');
 const clearBtn = document.getElementById('jsClear');
+const pickerBtn = document.getElementsByClassName('jsCustomColor');
+const colorPicker = document.getElementById('jsCustomColor');
 
 const INITIAL_COLOR = '#2c2c2c'
 const CANVAS_SIZE = 700;
@@ -83,7 +85,17 @@ const handleSaveClick = () => {
 
 const clearCanvas = () => {
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-}
+};
+
+const colorPickerClick = () => {
+    colorPicker.click();
+};
+
+const updateColorPicker = (event) => {
+    const color = event.target.value;
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+};
 
 if(canvas) {
     canvas.addEventListener('mousemove', onMouseEnter);
@@ -108,8 +120,16 @@ if(mode) {
 
 if(saveBtn) {
     saveBtn.addEventListener('click', handleSaveClick);
-}
+};
 
 if(clearBtn) {
     clearBtn.addEventListener('click', clearCanvas);
-}
+};
+
+if(pickerBtn) {
+    pickerBtn[0].addEventListener('click', colorPickerClick);
+};
+
+if(colorPicker) {
+    colorPicker.addEventListener('change', updateColorPicker);
+};
