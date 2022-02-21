@@ -65,11 +65,20 @@ body {
 .controls__colors .jsCustomColor {
     display: flex;
     align-items: center;
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }
 
-.jsCustomColor input {
-    display: none;
+.jsCustomColor input[type=color] {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    border: none;
+    width: 50px;
+    height: 50px;
+    padding: 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.jsCustomColor input[type=color]::-webkit-color-swatch {
+    border: none;
 }
 
 .controls .controls__range {
